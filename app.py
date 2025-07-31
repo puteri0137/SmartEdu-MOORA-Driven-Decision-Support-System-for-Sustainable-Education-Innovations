@@ -43,7 +43,7 @@ if uploaded_file is not None:
         st.write(df)
 
         # Ensure the required columns are present
-        required_columns = ['Technology', 'Cost', 'Ease of Use', 'Effectiveness', 'Accessibility', 'Innovation']
+        required_columns = ['Technology','Cost','Ease of Use','Effectiveness','Accessibility','Innovation']
         
         if not all(col in df.columns for col in required_columns):
             missing_cols = [col for col in required_columns if col not in df.columns]
