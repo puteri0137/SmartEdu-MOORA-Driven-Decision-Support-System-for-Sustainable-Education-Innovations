@@ -35,6 +35,9 @@ if uploaded_file is not None:
         # Read the uploaded file into a pandas DataFrame
         df = pd.read_csv(uploaded_file)
 
+        # Clean up column names by stripping spaces and capitalizing
+        df.columns = df.columns.str.strip().str.title()
+
         # Show the uploaded data
         st.write("### Input Data from CSV")
         st.write(df)
@@ -57,5 +60,3 @@ if uploaded_file is not None:
 
     except Exception as e:
         st.write(f"### Error: An issue occurred while reading the CSV file. Please check the format. Error: {str(e)}")
-
-
